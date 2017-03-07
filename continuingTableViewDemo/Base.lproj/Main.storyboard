@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aGP-sb-DWk">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TableView Load More Items-->
+        <scene sceneID="SG3-je-aRD">
+            <objects>
+                <viewController title="TableView Load More Items" id="NJc-Ib-2Xh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Oq-Y8-M5Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="s9Z-rL-agA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QNa-u9-jtg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zzL-UC-TIX">
+                                <rect key="frame" x="78" y="318" width="219" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foR-cT-qEE">
+                                        <rect key="frame" x="34" y="0.0" width="151" height="30"/>
+                                        <state key="normal" title="Auto Load More Items"/>
+                                        <connections>
+                                            <segue destination="8pq-DB-wIN" kind="show" id="5cV-dC-Srb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXw-fp-IBP">
+                                        <rect key="frame" x="9.5" y="30" width="200" height="30"/>
+                                        <state key="normal" title="Click Cell to Load More Items"/>
+                                        <connections>
+                                            <segue destination="vTg-Cm-gW5" kind="show" id="qOd-pb-zYQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjo-Ao-JDj">
+                                        <rect key="frame" x="0.0" y="60" width="219" height="30"/>
+                                        <state key="normal" title="Click Footer to Load More Items"/>
+                                        <connections>
+                                            <segue destination="xdK-E0-ybD" kind="show" id="9Bl-yj-hjx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zzL-UC-TIX" firstAttribute="centerX" secondItem="QNa-u9-jtg" secondAttribute="centerX" id="yDV-QS-q45"/>
+                            <constraint firstItem="zzL-UC-TIX" firstAttribute="centerY" secondItem="QNa-u9-jtg" secondAttribute="centerY" id="zYx-fs-RAs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jcm-KV-li0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yh3-uA-14w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1040.8" y="178.56071964017991"/>
+        </scene>
+        <!--Auto Load More Items-->
+        <scene sceneID="elz-kp-8CP">
+            <objects>
+                <tableViewController title="Auto Load More Items" id="8pq-DB-wIN" customClass="AutoLoadMoreTableViewController" customModule="continuingTableViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jDK-vi-Itb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="m2i-i2-HAe">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m2i-i2-HAe" id="aYd-AO-Nt0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8pq-DB-wIN" id="7IG-eK-npL"/>
+                            <outlet property="delegate" destination="8pq-DB-wIN" id="bdh-pG-UgS"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="af9-6h-01S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1782" y="179"/>
+        </scene>
+        <!--Click Cell to Load More Items-->
+        <scene sceneID="wBa-iH-ifh">
+            <objects>
+                <tableViewController title="Click Cell to Load More Items" id="vTg-Cm-gW5" customClass="ClickCellToLoadMoreTableViewController" customModule="continuingTableViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dMm-fC-bMS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tZN-wH-2xQ">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tZN-wH-2xQ" id="Xjn-bE-Qze">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vTg-Cm-gW5" id="w9f-ae-alO"/>
+                            <outlet property="delegate" destination="vTg-Cm-gW5" id="RL8-7U-Pgb"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3H9-9G-SHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="993"/>
+        </scene>
+        <!--Click Footer to Load More Items-->
+        <scene sceneID="srp-LB-pcG">
+            <objects>
+                <tableViewController title="Click Footer to Load More Items" id="xdK-E0-ybD" customClass="ClickFooterToLoadMoreTableViewController" customModule="continuingTableViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jyc-WF-JEE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="H9h-VJ-pip">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H9h-VJ-pip" id="67B-aX-iyV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xdK-E0-ybD" id="X9Q-58-X3G"/>
+                            <outlet property="delegate" destination="xdK-E0-ybD" id="vIO-dN-M5r"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iFp-Xk-Q5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1782" y="940"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aMI-I6-uWX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aGP-sb-DWk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aGb-bu-BRx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NJc-Ib-2Xh" kind="relationship" relationship="rootViewController" id="Ixt-Af-bb7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oOa-vq-whJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101.59999999999999" y="178.56071964017991"/>
+        </scene>
+    </scenes>
+</document>
